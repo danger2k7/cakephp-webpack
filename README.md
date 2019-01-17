@@ -5,7 +5,7 @@ Collect all .js, .scss (you can configure extensions) files and collect them in 
 ## Requirements
 
 * PHP >= 5.6
-* CakePHP >= 3.2.9
+* CakePHP >= 3.6.0
 * Webpack >= 2 (you can use webpack 1 but you must configure it on your own).
 
 ## Installation
@@ -18,9 +18,9 @@ The recommended way to install composer packages is:
 composer require grandfelix/cakephp-webpack
 ```
 
-Load plugin
+Load plugin (In Application::bootstrap())
 ```
-Plugin::load('GrandFelix/Webpack', ['bootstrap' => true, 'routes' => false]);
+$this->addPlugin('GrandFelix/Webpack', ['bootstrap' => true, 'routes' => false]);
 ```
 
 For now, copy webpack.config.default.js and webpack.packages.json from Webpack plugin to your main App folder (not ./src) and rename it to webpack.config.js and packages.json. If you already have packages.json file than add webpack dependencies to it...
